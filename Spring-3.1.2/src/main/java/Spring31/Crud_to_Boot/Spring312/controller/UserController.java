@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+
 import java.sql.SQLException;
 
 @Controller
+
 public class UserController {
 
     private final UserService userService;
@@ -27,7 +29,7 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String saveForm(@ModelAttribute("user") User user) throws SQLException {
+    public String saveForm(@ModelAttribute("user") User user) {
 
         return "save";
     }
@@ -60,6 +62,7 @@ public class UserController {
         userService.delete(id);
         return "redirect:/";
     }
+
 
 
 
